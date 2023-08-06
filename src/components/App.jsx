@@ -2,13 +2,15 @@ import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline';
 import { Routes, Route } from 'react-router-dom';
 import { Movies, Profile, Actors, MovieInformation, Navbar } from '../components/index'
+import classes from './styles.module.css'
 
 const App = () => {
     return (
-        <div>
+        <div className={classes.root}>
             <CssBaseline />
             <Navbar />
-            <main>
+            <main className={classes.content}>
+                <div className={classes.toolbar} />
                 <Routes>
                     <Route path='/' element={<Movies />} />
                     <Route path='/movie/:id' element={<MovieInformation />} />
